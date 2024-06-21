@@ -37,6 +37,9 @@ class Maze:
                 self.__draw_cell(i, j)
     
     def __draw_cell(self, i, j):
+        if self.__win == None:
+            return
+        
         x_offset = i * self.__cell_size_x + self.__x1
         y_offset = j * self.__cel_size_y + self.__y1
 
@@ -50,6 +53,9 @@ class Maze:
         self.__animate()
     
     def __animate(self):
+        if self.__win == None:
+            return
+        
         self.__win.redraw()
         sleep(0.05)
         
