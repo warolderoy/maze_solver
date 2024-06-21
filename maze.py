@@ -22,9 +22,6 @@ class Maze:
         self.__win = win
 
         self.__create_cells()
-        for i in range(len(self.__cells)):
-            for j in range(len(self.__cells[i])):
-                self.__draw_cell(i, j)
 
 
     def __create_cells(self):
@@ -34,6 +31,10 @@ class Maze:
                 cell = Cell(self.__win)
                 col.append(cell)
             self.__cells.append(col)
+        
+        for i in range(len(self.__cells)):
+            for j in range(len(self.__cells[i])):
+                self.__draw_cell(i, j)
     
     def __draw_cell(self, i, j):
         x_offset = i * self.__cell_size_x + self.__x1
