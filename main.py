@@ -12,7 +12,7 @@ def main():
         30,
         win
     )
-    
+    maze.solve()
     
     win.wait_for_close()
 
