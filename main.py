@@ -2,17 +2,31 @@ from graphics import Window
 from maze import Maze
 
 def main():
-    win = Window(800, 600)
+    num_rows = 14
+    num_cols = 14
+    margin = 50
+    screen_x = 800
+    screen_y = 600
+    cell_size_x = (screen_x - 2 * margin) / num_cols
+    cell_size_y = (screen_y - 2 * margin) / num_rows
+
+    win = Window(screen_x, screen_y)
     maze = Maze(
-        50,
-        50,
-        10,
-        10,
-        30,
-        30,
-        win
+        margin,
+        margin,
+        num_rows,
+        num_cols,
+        cell_size_x,
+        cell_size_y,
+        win,
+        10
     )
-    maze.solve()
+    print("maze generated")
+    is_solveable = maze.solve()
+    if is_solveable:
+        print("the maze has been solved")
+    else:
+        print("the maze is unsolvable")
     
     win.wait_for_close()
 
