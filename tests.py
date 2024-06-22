@@ -3,6 +3,7 @@ import unittest
 from maze import Maze
 
 class Tests(unittest.TestCase):
+    # Maze Tests
     def test_maze_create_cells(self):
         num_cols = 12
         num_rows = 10
